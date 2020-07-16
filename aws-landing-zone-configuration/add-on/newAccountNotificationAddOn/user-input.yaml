@@ -3,6 +3,3 @@ input_parameters:
     parameters: 
       core_ou: core
       core_account: primary
-  #- file_name: parameters/core_accounts/aws-landing-zone-new-account-notification.json
-   # parameters:
-    #  NewAccountCreateNotificationEmailParameter: "senstb@amazon.com"
