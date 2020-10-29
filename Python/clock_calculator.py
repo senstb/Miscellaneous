@@ -26,11 +26,14 @@ class TimeStamp(object):
 
     def add_hour(self, starthour=int, addhour=int, minute_hour_change=int):
         sum_hour = starthour + addhour
+        sum_hour += minute_hour_change
+
         if sum_hour > 23:
             hour = sum_hour - 24
+        elif sum_hour <0:
+            hour = sum_hour + 24
         else:
             hour = sum_hour
-        sum_hour += minute_hour_change
         return sum_hour
 
     def print_time(self, hour=int, minute=int):
@@ -47,8 +50,6 @@ def parse_args(args):
     parser.add_argument("-mi","--minute",help="Start minute value: mm", type=int, default="00")
     parser.add_argument("-ah","--addhour", help="Input hour value to add: hh", type=int, default="00")
     parser.add_argument("-am","--addminute", help="Input minute value to add: mm", type=int, default="00")
-    parser.add_argument("-sh","--subtracthour", help="Input hour value to subtract: mm", type=int, default="00")
-    parser.add_argument("-sm","--subtractminute", help="Input minute value to subtract: mm", type=int, default="00")
     return parser.parse_args(args)
 
 
